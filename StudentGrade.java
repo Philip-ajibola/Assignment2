@@ -13,6 +13,7 @@ public class StudentGrade{
 			int numberOfSubject = input.nextInt();
 		System.out.println("Saving >>>>>>>>>>>>>>>>");
 		System.out.println("Sucessfully Saved ");
+		System.out.println();
 
 		grade = new int[numberOfStudent][numberOfSubject];
 		for(int counter = 0;counter<grade.length;counter++){
@@ -20,8 +21,13 @@ public class StudentGrade{
 				System.out.printf("Entering Score For Student %d%n",counter+1);
 				 System.out.printf("Enter Score For Subject %d%n",count+1);
 				 	grade[counter][count] = input.nextInt();
+			while(grade[counter][count]<0 || grade[counter][count]>=100){
+					System.out.println("I Think This Was A Mistake \n Please Enter Student Real Score");
+						grade[counter][count] = input.nextInt();
+
+				}
 				System.out.println("Saving >>>>>>>>>>>>>>>>");
-				System.out.println("Sucessfully Saved ");
+				System.out.println("Successfully Saved ");
 				System.out.println();
 			}
 		}
